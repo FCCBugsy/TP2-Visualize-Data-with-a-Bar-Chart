@@ -25,7 +25,6 @@ INSTRUCTIONS:
 // PLEASE NOTE: Adding global style rules using the * selector, or by adding rules to body {..} or html {..}, or to all elements within body or html, i.e. h1 {..}, has the potential to pollute the test suite's CSS. Try adding: * { color: red }, for a quick example!
 
 // Once you have read the above messages, you can delete all comments. 
-// d3 bar chart
 
 // get data
 var url = "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json";
@@ -103,10 +102,9 @@ d3.json(url).then(function(data) {
       .attr("data-gdp", (d) => d[1])
   
       .attr("x", (d) => xScale(new Date(d[0])))
-      .attr("y", (d) => yScale(d[1]))
-      .attr("width", w / dataset.length)
+      .attr("y", (d) => yScale(d[1]))  // height
+      .attr("width", (w / dataset.length))
       .attr("height", (d) => h - yScale(d[1]))
-  
       // tool tip display
       .on("mouseover", function(d, i){
       	div.transition()
